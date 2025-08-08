@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(180deg,#446D83 30%, #7DC5BB 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container h1 {
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+}
