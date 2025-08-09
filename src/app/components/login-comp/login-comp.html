@@ -1,1 +1,48 @@
-<p>login-comp works!</p>
+<div class="login-container">
+  <div class="login-card">
+    <ng-container [ngSwitch]="step">
+      <!-- STEP 0 -->
+      <div *ngSwitchCase="0" class="intro-box" (click)="nextStep()">
+        YOUR KEYS
+      </div>
+
+      <!-- STEP 1 -->
+      <div *ngSwitchCase="1" class="credentials-display">
+        <p><strong>Usuario:</strong> rominaS</p>
+        <p><strong>Contraseña:</strong> 0201</p>
+        <button (click)="nextStep()">NEXT</button>
+      </div>
+
+    <!-- STEP 2 -->
+    <div *ngSwitchCase="2" class="form-box">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <input
+        type="text"
+        formControlName="username"
+        placeholder="Usuario"
+        required
+        />
+        <input
+        type="password"
+        formControlName="password"
+        placeholder="Contraseña"
+        required
+        />
+        <button type="submit">Entrar</button>
+    </form>
+
+    <div *ngIf="errorMessage" class="error-msg">
+        Intenta de nuevo, guapa.
+    </div>
+    </div>
+    </ng-container>
+    <div class="stepper">
+    <span
+        *ngFor="let s of [0,1,2]; let i = index"
+        class="step-dot"
+        [class.active]="step === i"
+        (click)="goToStep(i)"
+    ></span>
+</div>
+  </div>
+</div>

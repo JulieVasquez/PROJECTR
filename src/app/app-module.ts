@@ -5,16 +5,25 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { RecibidorComp } from './components/recibidor-comp/recibidor-comp';
 import { LoginComp } from './components/login-comp/login-comp';
+import { MaterialModule } from './material/material-module';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComp } from './components/home-comp/home-comp';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     App,
     RecibidorComp,
-    LoginComp
+    LoginComp,
+    HomeComp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    HttpClientModule,
+    ReactiveFormsModule
+    
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
