@@ -21,7 +21,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatSelectionList} from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // 👈 AÑADE ESTA LÍNEA
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -49,7 +49,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSelectionList,  
     MatListModule,
     MatProgressSpinnerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSidenavModule
   ],
   exports:[
     MatTableModule,
@@ -74,7 +75,9 @@ import { MatMenuModule } from '@angular/material/menu';
     
     MatListModule,
     MatProgressSpinnerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSidenavModule
+    
   ]
 })
 export class MaterialModule { }

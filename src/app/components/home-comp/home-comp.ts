@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-comp',
@@ -13,6 +13,11 @@ export class HomeComp implements OnInit, OnDestroy{
   seconds = 0;
   private intervalId: any;
   startDate = new Date('2023-01-02T00:00:00');
+
+  constructor(
+    private cdr: ChangeDetectorRef,
+
+  ) { }
 
   ngOnInit() {
     this.startCountUp();
@@ -32,6 +37,8 @@ export class HomeComp implements OnInit, OnDestroy{
       this.minutes = Math.floor((elapsed / (1000 * 60)) % 60);
       this.seconds = Math.floor((elapsed / 1000) % 60);
     }, 1000);
+    this.cdr.detectChanges();
+
   }
 
 }
