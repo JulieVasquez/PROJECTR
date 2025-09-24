@@ -29,9 +29,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  line-height: normal;
   height: 200px;
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: white;
+  font-family: Century Gothic, sans-serif;
 }
 
 

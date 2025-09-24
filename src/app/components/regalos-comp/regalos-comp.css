@@ -1,19 +1,30 @@
+mat-sidenav-content {
+  background: transparent !important;
+  padding: 0 !important; /* eliminamos padding que mete Material */
+  margin: 0;
+}
+mat-sidenav {
+  width: auto;
+  background: linear-gradient(180deg, rgba(123, 164, 186, 0.86) 0%, #1E4F8E 100%);
+
+}
+
 
 .sidenav-container {
-  height: 100vh;
-  width: 100vw;
+
   background: linear-gradient(180deg, rgba(123, 164, 186, 0.86) 0%, #1E4F8E 100%);
   color: white;
 }
 
 
 .sidenav {
-  width: 220px;
-  background-color: rgba(255, 255, 255, 0);
-  padding: 10px;
-  color: white;
-
+  width: 80px; /* o el tamaño que quieras */
+  background: rgba(255, 255, 255, 0.1); /* semi transparente para que no tape tu diseño */
+  backdrop-filter: blur(6px);
+  border-right: 1px solid rgba(255,255,255,0.2);
 }
+
+
 
 .menu-header {
   padding: 15px;
@@ -24,13 +35,27 @@
   color: white;
 }
 
+.toggle-btn {
+  margin-top: 9px; /* Ajusta el número según lo que necesites */
+}
+
+
+mat-icon {
+  font-size: 20px;
+  vertical-align: middle;
+  color: #0d2d5e;
+}
+
 
 mat-nav-list a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  
 }
+
 
 mat-nav-list a.active {
   border-radius: 5px;
@@ -40,12 +65,36 @@ mat-sidenav-content {
   padding: 20px;
 }
 
+.logout-button {
+  margin-top: auto; /* empuja el botón al final */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
 .main-content {
   height: 100vh;
   background: linear-gradient(180deg, rgba(123, 164, 186, 0.86) 0%, #1E4F8E 100%);
   display: flex;
   flex-direction: column;
 }
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/icons/JELLYFISH.png');
+  opacity: 0.3;
+  z-index: 0;
+}
+
 
 .center-content h2 {
   font-size: 2rem;

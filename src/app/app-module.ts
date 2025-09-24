@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComp } from './components/home-comp/home-comp';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegalosComp } from './components/regalos-comp/regalos-comp';
+import { RegistroComp } from './components/registro-comp/registro-comp';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { RegalosComp } from './components/regalos-comp/regalos-comp';
     RecibidorComp,
     LoginComp,
     HomeComp,
-    RegalosComp
+    RegalosComp,
+    RegistroComp
   ],
   imports: [
     BrowserModule,

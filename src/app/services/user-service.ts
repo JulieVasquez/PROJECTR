@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { Token } from '../models/token';
 import { tap } from 'rxjs';
+import { DTOUser } from '../models/DTOUser';
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +61,9 @@ export class UserService {
       return localStorage.getItem('authorities');
     }
     return "";
+  }
+
+  registrarUsuario(dtoUser: DTOUser ) {
+    return this.http.post<User>(this.ruta_servidor + "/" + this.recurso + "/" + "registrar", dtoUser);
   }
 }

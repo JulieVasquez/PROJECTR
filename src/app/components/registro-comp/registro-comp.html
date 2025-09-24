@@ -1,0 +1,41 @@
+<div class="center-container">
+  <div class="login-container">
+    <h2>Regístrate</h2>
+    <form [formGroup]="usuarioForm" (ngSubmit)="registrar()" class="form-columns">
+      <div class="column-group">
+        <div class="input-group">
+          <input formControlName="username" placeholder="Usuario" required />
+        </div>        
+        <div class="input-group">
+          <input type="password" formControlName="password" placeholder="Contraseña" required />
+        </div>
+        <div class="input-group">
+          <input formControlName="nombre" placeholder="Nombre" required />
+        </div>
+        <div class="input-group">
+          <input formControlName="apellido" placeholder="Apellido" required />
+        </div>
+      </div>
+
+      <div class="column-group">
+
+
+
+
+      
+        <div class="input-group">
+          <input formControlName="correo" placeholder="Correo electrónico" required />
+        </div>
+
+
+    </div>
+
+      <div class="full-width-button">
+        <button type="submit" class="login-button" >Registrarme</button>
+        <div class="register-link">
+          <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
