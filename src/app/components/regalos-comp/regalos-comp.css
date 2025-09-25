@@ -80,10 +80,12 @@ mat-sidenav-content {
 
 
 .main-content {
-  height: 100vh;
-  background: linear-gradient(180deg, rgba(123, 164, 186, 0.86) 0%, #1E4F8E 100%);
+  min-height: 200vh; /* asegura que haya scroll */
   display: flex;
   flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative; /* necesario para ::before */
+  background: linear-gradient(180deg, rgba(123, 164, 186, 0.86) 0%, #1E4F8E 100%);
 }
 
 .main-content::before {
@@ -91,22 +93,33 @@ mat-sidenav-content {
   position: absolute;
   inset: 0;
   background-image: url('/icons/JELLYFISH.png');
-  opacity: 0.3;
+  background-repeat: repeat; /* repite la imagen */
+  background-size: auto; /* mantiene el tamaño original */
+  opacity: 0.2;
   z-index: 0;
 }
 
-
-.center-content h2 {
-  font-size: 2rem;
-  color: #2C2C2C;
-  margin-bottom: 20px;
-  text-align: center;
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
 }
 
-.center-content p {
-  font-size: 1.2rem;
-  color: #2C2C2C;
-  text-align: center;
-font-family: Century Gothic;
+.div1 { grid-area: 1 / 1 / 4 / 4; }
+.div2 { grid-area: 1 / 4 / 2 / 6; }
+.div3 { grid-area: 4 / 1 / 6 / 4; }
+.div4 { grid-area: 2 / 4 / 6 / 6; }
 
+
+/*div1*/
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.dev/assets/img/examples/shiba1.jpg');
+  background-size: cover;
 }

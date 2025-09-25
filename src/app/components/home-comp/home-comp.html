@@ -46,15 +46,25 @@
       </div>
     </div>
 
-    <div class="timeline">
-      <div *ngFor="let evento of timeline" class="timeline-item">
-        <div class="timeline-content">
-          <h3>{{ evento.titulo }} ❤️</h3>
-          <span>{{ evento.fecha }}</span>
-          <p>{{ evento.descripcion }}</p>
-        </div>
-      </div>
+    <div>
+        <main class="timeline-wrapper">
+          <div class="svg-timeline">
+            <svg width="8px" height="100%" viewBox="0 0 8 100%">
+              <line id="timeline" fill="none" stroke="#1E4F8E" stroke-width="8" x1="4" y1="0" x2="4" y2="100%"/>
+            </svg>
+          </div>
+
+          <ol class="timeline clearfix">
+            <li *ngFor="let evento of timeline; let i = index" 
+                [ngClass]="{'timeline__item': true, 'right': i % 2 !== 0}">
+              <h3 class="timeline__day">{{ evento.titulo }}: <span>{{ evento.fecha | date:'dd/MM/yyyy' }}</span></h3>
+              <p class="timeline__day-sum">{{ evento.descripcion }}</p>
+            </li>
+          </ol>
+        </main>
     </div>
+
+
 
   </mat-sidenav-content>
 </mat-sidenav-container>
