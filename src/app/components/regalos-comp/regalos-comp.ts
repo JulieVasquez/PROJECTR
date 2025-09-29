@@ -16,9 +16,9 @@ export class RegalosComp {
 
   ) { }
   ngOnInit() {
-    this.opened = false;
+    this.opened = true;
     this.cdr.detectChanges();
-    this.menuExpandido = false;
+    this.menuExpandido = true;
   }
   opened = false; // empieza abierto
   menuExpandido = false;

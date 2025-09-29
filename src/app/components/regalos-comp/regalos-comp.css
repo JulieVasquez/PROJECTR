@@ -11,7 +11,6 @@ mat-sidenav {
 
 
 .sidenav-container {
-
   background: linear-gradient(180deg, rgba(123, 164, 186, 0.86) 0%, #1E4F8E 100%);
   color: white;
 }
@@ -22,9 +21,17 @@ mat-sidenav {
   background: rgba(255, 255, 255, 0.1); /* semi transparente para que no tape tu diseño */
   backdrop-filter: blur(6px);
   border-right: 1px solid rgba(255,255,255,0.2);
+  
 }
 
-
+.menu-list {
+  margin-top:20px;
+  flex-grow: 1; /* para que ocupe el espacio disponible */
+  position: fixed;
+  background: rgba(255, 255, 255, 0.1); /* semi transparente para que no tape tu diseño */
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+}
 
 .menu-header {
   padding: 15px;
@@ -44,6 +51,7 @@ mat-icon {
   font-size: 20px;
   vertical-align: middle;
   color: #0d2d5e;
+
 }
 
 
@@ -72,20 +80,21 @@ mat-sidenav-content {
   gap: 8px;
   padding: 10px 16px;
   color: white;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+  border-radius: 50px;
 }
 
 
-
-
 .main-content {
-  min-height: 200vh; /* asegura que haya scroll */
   display: flex;
-  flex-direction: column;
-  font-family: 'Segoe UI', sans-serif;
-  position: relative; /* necesario para ::before */
+  flex-direction: row; /* Cambia de columna a fila */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: flex-start; /* Alinea arriba */
+  gap: 24px; /* Espacio entre las cards */
+  flex-wrap: wrap; /* Permite que se acomoden si no hay espacio */
+  padding: 40px 20px;
+  position: relative;
   background: linear-gradient(180deg, rgba(123, 164, 186, 0.86) 0%, #1E4F8E 100%);
+  min-height: 100vh;
 }
 
 .main-content::before {
@@ -93,33 +102,26 @@ mat-sidenav-content {
   position: absolute;
   inset: 0;
   background-image: url('/icons/JELLYFISH.png');
-  background-repeat: repeat; /* repite la imagen */
-  background-size: auto; /* mantiene el tamaño original */
+  background-repeat: repeat;
+  background-size: auto;
   opacity: 0.2;
   z-index: 0;
 }
 
-.parent {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
+.main-content .item1,
+.main-content .item2 {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 300px; /* Cards de hasta 300px de ancho */
+  max-width: 100%;
 }
 
-.div1 { grid-area: 1 / 1 / 4 / 4; }
-.div2 { grid-area: 1 / 4 / 2 / 6; }
-.div3 { grid-area: 4 / 1 / 6 / 4; }
-.div4 { grid-area: 2 / 4 / 6 / 6; }
-
-
-/*div1*/
-
-.example-card {
-  max-width: 400px;
-}
-
-.example-header-image {
-  background-image: url('https://material.angular.dev/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+mat-card.regalosj,
+mat-card.regalosr {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 16px;
 }

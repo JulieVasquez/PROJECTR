@@ -32,9 +32,9 @@ export class HomeComp implements OnInit, OnDestroy{
   
   ngOnInit() {
     this.startCountUp();
-      this.opened = false;
+      this.opened = true;
       this.cdr.detectChanges();
-      this.menuExpandido = false;
+      this.menuExpandido = true;
       this.cargarEventos();
   }
 

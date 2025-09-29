@@ -21,10 +21,6 @@
   <!-- Contenido principal -->
   <mat-sidenav-content class="main-content">
     <!-- Botón para abrir/cerrar -->
-    <button mat-icon-button (click)="sidenav.toggle()" class="toggle-btn">
-      <mat-icon>menu</mat-icon>
-    </button>
-
     <div class="countup-box">
       <div class="time-card-grid">
         <div class="time-card">
@@ -54,13 +50,15 @@
             </svg>
           </div>
 
-          <ol class="timeline clearfix">
-            <li *ngFor="let evento of timeline; let i = index" 
-                [ngClass]="{'timeline__item': true, 'right': i % 2 !== 0}">
-              <h3 class="timeline__day">{{ evento.titulo }}: <span>{{ evento.fecha | date:'dd/MM/yyyy' }}</span></h3>
-              <p class="timeline__day-sum">{{ evento.descripcion }}</p>
-            </li>
-          </ol>
+            <ol class="timeline clearfix">
+              <li *ngFor="let evento of timeline; let i = index" 
+                  [ngClass]="{'timeline__item': true, 'right': i % 2 !== 0}">
+                <h3 class="timeline__day">{{ evento.titulo }}</h3>
+                <small class="timeline__date">{{ evento.fecha | date:'dd/MM/yyyy' }}</small>
+                <p class="timeline__day-sum">{{ evento.descripcion }}</p>
+              </li>
+            </ol>
+
         </main>
     </div>
 

@@ -79,7 +79,6 @@ mat-sidenav {
 
 
 .sidenav-container {
-
   background: linear-gradient(180deg, rgba(123, 164, 186, 0.86) 0%, #1E4F8E 100%);
   color: white;
 }
@@ -90,9 +89,17 @@ mat-sidenav {
   background: rgba(255, 255, 255, 0.1); /* semi transparente para que no tape tu diseño */
   backdrop-filter: blur(6px);
   border-right: 1px solid rgba(255,255,255,0.2);
+  
 }
 
-
+.menu-list {
+  margin-top: 20px;
+  flex-grow: 1; /* para que ocupe el espacio disponible */
+  position: fixed;
+  background: rgba(255, 255, 255, 0.1); /* semi transparente para que no tape tu diseño */
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+}
 
 .menu-header {
   padding: 15px;
@@ -112,6 +119,7 @@ mat-icon {
   font-size: 20px;
   vertical-align: middle;
   color: #0d2d5e;
+
 }
 
 
@@ -140,8 +148,7 @@ mat-sidenav-content {
   gap: 8px;
   padding: 10px 16px;
   color: white;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+  border-radius: 50px;
 }
 
 /*nota*/
@@ -178,12 +185,21 @@ mat-sidenav-content {
   position: relative;
   width: 45%;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.321);
+  background-color: rgba(255, 255, 255, 0.712);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   margin: 20px 0;
   clear: both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer; /* se siente clickeable */
 }
+
+.timeline__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  background-color: rgba(255, 255, 255, 0.9); /* un poquito más clara */
+}
+
 
 
 
@@ -196,18 +212,20 @@ mat-sidenav-content {
 }
 
 .timeline__day {
-  font-weight: 600;
-  margin: 0 0 10px;
+  font-size: 1.2em;
   color: #1E4F8E;
+  margin: 0;
 }
 
-.timeline__day span {
-  font-weight: 400;
-  color: #FF9639;
+.timeline__date {
+  display: block;   /* fuerza a que esté debajo */
+  margin-top: 4px;
+  color: #777;
+  font-size: 0.9em;
 }
 
 .timeline__day-sum {
-  font-weight: 300;
+  margin-top: 8px;
   color: #333;
   line-height: 1.5;
 }
